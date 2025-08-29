@@ -19,16 +19,28 @@
                  upgrade-insecure-requests">
 
   <link rel="stylesheet" href="style.css">
+
+  <!-- AOS (Animate On Scroll) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      AOS.init({
+        duration: 800,   // durée de l'anim
+        once: true       // ne joue qu'une fois
+      });
+    });
+  </script>
 </head>
 <body>
   <div class="container">
-    <h1>Restaurant • Bar<br>Le 716</h1>
-    <p>Une expérience culinaire unique au Muy</p>
+    <h1 data-aos="fade-up">Restaurant • Bar<br>Le 716</h1>
+    <p data-aos="fade-up">Une expérience culinaire unique au Muy</p>
 
     <!-- SECTION MENU -->
     <main>
       <!-- ENTRÉES -->
-      <section id="entrees" class="menu-section">
+      <section id="entrees" class="menu-section" data-aos="fade-up">
         <h2>Entrées</h2>
         <ul>
           <li>
@@ -55,7 +67,7 @@
       </section>
 
       <!-- PLATS -->
-      <section id="plats" class="menu-section">
+      <section id="plats" class="menu-section" data-aos="fade-up">
         <h2>Plats</h2>
         <ul>
           <li>
@@ -82,26 +94,24 @@
         </ul>
 
         <h3>Accompagnements</h3>
-<ul>
-  <li>
-    <em class="fr">Frites, pâtes, tomates provençale, ratatouille, riz</em>
-    <em class="en">French fries, pasta, Provençal tomatoes, ratatouille, rice</em>
-  </li>
-</ul>
+        <ul>
+          <li>
+            <em class="fr">Frites, pâtes, tomates provençale, ratatouille, riz</em>
+            <em class="en">French fries, pasta, Provençal tomatoes, ratatouille, rice</em>
+          </li>
+        </ul>
 
-<h3>Sauces</h3>
-<ul>
-  <li>
-    <em class="fr">Forestière, poivre, roquefort</em>
-    <em class="en">Mushroom sauce, pepper, Roquefort cheese</em>
-  </li>
-</ul>
-
-
+        <h3>Sauces</h3>
+        <ul>
+          <li>
+            <em class="fr">Forestière, poivre, roquefort</em>
+            <em class="en">Mushroom sauce, pepper, Roquefort cheese</em>
+          </li>
+        </ul>
       </section>
 
-            <!-- PÂTES -->
-      <section id="pates" class="menu-section">
+      <!-- PÂTES -->
+      <section id="pates" class="menu-section" data-aos="fade-up">
         <h2>Pâtes</h2>
         <ul>
           <li>
@@ -128,230 +138,229 @@
       </section>
 
       <!-- MENU ENFANT -->
-<section id="menu-enfant" class="menu-section">
-  <h2>Menu Enfant<br>(-12 ans)</h2>
-  <ul>
-    <li>
-      <strong>Menu Enfant avec boisson</strong> – 10€<br>
-      <em class="fr">Steak haché ou nuggets<br>(accompagnement aux choix)</em>
-      <em class="en">Ground beef patty or nuggets (choice of side)</em>
-    </li>
-  </ul>
-</section>
+      <section id="menu-enfant" class="menu-section" data-aos="fade-up">
+        <h2>Menu Enfant<br>(-12 ans)</h2>
+        <ul>
+          <li>
+            <strong>Menu Enfant avec boisson</strong> – 10€<br>
+            <em class="fr">Steak haché ou nuggets<br>(accompagnement aux choix)</em>
+            <em class="en">Ground beef patty or nuggets (choice of side)</em>
+          </li>
+        </ul>
+      </section>
 
-<!-- VINS – EAU -->
-<section id="vins-eau" class="menu-section">
-  <h2>Vins – Eau</h2>
-  <ul>
-    <!-- Verres / Piscine -->
-    <li>
-      <strong>Verre de Vin (Côtes de Provence)</strong> 3€<br>
-      <em class="en">Glass of wine (Côtes de Provence)</em>
-    </li>
-    <li>
-      <strong>Piscine de Vin (Côtes de Provence)</strong> 6€<br>
-      <em class="en">“Wine piscine” (Côtes de Provence, wine served on ice)</em>
-    </li>
+      <!-- VINS – EAU -->
+      <section id="vins-eau" class="menu-section" data-aos="fade-up">
+        <h2>Vins – Eau</h2>
+        <ul>
+          <!-- Verres / Piscine -->
+          <li>
+            <strong>Verre de Vin (Côtes de Provence)</strong> 3€<br>
+            <em class="en">Glass of wine (Côtes de Provence)</em>
+          </li>
+          <li>
+            <strong>Piscine de Vin (Côtes de Provence)</strong> 6€<br>
+            <em class="en">“Wine piscine” (Côtes de Provence, wine served on ice)</em>
+          </li>
 
-    <!-- Carafes / Pichets -->
-    <li>
-      <strong>Côtes de Provence 50 cl</strong> 13€<br>
-      <em class="en">Côtes de Provence 50 cl</em>
-    </li>
-    <li>
-      <strong>Côtes de Provence 25 cl</strong> 6,50€<br>
-      <em class="en">Côtes de Provence 25 cl</em>
-    </li>
+          <!-- Carafes / Pichets -->
+          <li>
+            <strong>Côtes de Provence 50 cl</strong> 13€<br>
+            <em class="en">Côtes de Provence 50 cl</em>
+          </li>
+          <li>
+            <strong>Côtes de Provence 25 cl</strong> 6,50€<br>
+            <em class="en">Côtes de Provence 25 cl</em>
+          </li>
 
-    <!-- Bouteilles -->
-    <li>
-      <strong>Domaine de la Maurette (Rouge · Rosé · Blanc)<br>Bouteille 75 cl</strong> 24€<br>
-      <em class="en">Domaine de la Maurette (Red · Rosé · White)<br>75 cl bottle</em>
-    </li>
-    <li>
-      <strong>Château du Rouet (TERES) (Rouge · Rosé · Blanc)<br>Bouteille 75 cl</strong> 23€<br>
-      <em class="en">Château du Rouet (TERES) (Red · Rosé · White)<br>75 cl bottle</em>
-    </li>
+          <!-- Bouteilles -->
+          <li>
+            <strong>Domaine de la Maurette (Rouge · Rosé · Blanc)<br>Bouteille 75 cl</strong> 24€<br>
+            <em class="en">Domaine de la Maurette (Red · Rosé · White)<br>75 cl bottle</em>
+          </li>
+          <li>
+            <strong>Château du Rouet (TERES) (Rouge · Rosé · Blanc)<br>Bouteille 75 cl</strong> 23€<br>
+            <em class="en">Château du Rouet (TERES) (Red · Rosé · White)<br>75 cl bottle</em>
+          </li>
 
-    <!-- Eaux -->
-    <li>
-      <strong>Vittel 1 L (bouteille)</strong> 10€<br>
-      <em class="en">Vittel 1 L (bottle)</em>
-    </li>
-    <li>
-      <strong>Vittel 0,5 L (bouteille)</strong> 5€<br>
-      <em class="en">Vittel 0.5 L (bottle)</em>
-    </li>
-    <li>
-      <strong>Sanpellegrino 1 L (bouteille)</strong> 10€<br>
-      <em class="en">Sanpellegrino 1 L (bottle)</em>
-    </li>
-    <li>
-      <strong>Sanpellegrino 0,5 L (bouteille)</strong> 5€<br>
-      <em class="en">Sanpellegrino 0.5 L (bottle)</em>
-    </li>
-  </ul>
-</section>
+          <!-- Eaux -->
+          <li>
+            <strong>Vittel 1 L (bouteille)</strong> 10€<br>
+            <em class="en">Vittel 1 L (bottle)</em>
+          </li>
+          <li>
+            <strong>Vittel 0,5 L (bouteille)</strong> 5€<br>
+            <em class="en">Vittel 0.5 L (bottle)</em>
+          </li>
+          <li>
+            <strong>Sanpellegrino 1 L (bouteille)</strong> 10€<br>
+            <em class="en">Sanpellegrino 1 L (bottle)</em>
+          </li>
+          <li>
+            <strong>Sanpellegrino 0,5 L (bouteille)</strong> 5€<br>
+            <em class="en">Sanpellegrino 0.5 L (bottle)</em>
+          </li>
+        </ul>
+      </section>
 
-<!-- DESSERTS -->
-<section id="desserts" class="menu-section">
-  <h2>Desserts</h2>
-  <ul>
-    <!-- Glaces & Sorbets -->
-    <li>
-      <strong>Crèmes glacées – Sorbets</strong><br>
-      <em class="fr">Parfums : Vanille, Chocolat, Pistache, Fraise, Café, Citron vert</em>
-      <em class="en">Flavors: Vanilla, Chocolate, Pistachio, Strawberry, Coffee, Lime</em>
-      <em class="fr">1 boule : 3€<br>2 boules : 5€<br>3 boules : 7€<br>Supplément chantilly : 1€</em>
-      <em class="en">1 scoop: €3<br>2 scoops: €5<br>3 scoops: €7<br>Extra whipped cream: €1</em>
-    </li>
+      <!-- DESSERTS -->
+      <section id="desserts" class="menu-section" data-aos="fade-up">
+        <h2>Desserts</h2>
+        <ul>
+          <!-- Glaces & Sorbets -->
+          <li>
+            <strong>Crèmes glacées – Sorbets</strong><br>
+            <em class="fr">Parfums : Vanille, Chocolat, Pistache, Fraise, Café, Citron vert</em>
+            <em class="en">Flavors: Vanilla, Chocolate, Pistachio, Strawberry, Coffee, Lime</em>
+            <em class="fr">1 boule : 3€<br>2 boules : 5€<br>3 boules : 7€<br>Supplément chantilly : 1€</em>
+            <em class="en">1 scoop: €3<br>2 scoops: €5<br>3 scoops: €7<br>Extra whipped cream: €1</em>
+          </li>
 
-    <!-- Coupes (10€) -->
-    <li>
-      <strong>Café liégeois</strong> – 10€<br>
-      <em class="fr">2 boules de glace café, 1 boule vanille, coulis café, chantilly</em>
-      <em class="en">2 scoops coffee ice cream, 1 scoop vanilla, coffee sauce, whipped cream</em>
-    </li>
-    <li>
-      <strong>Chocolat liégeois</strong> – 10€<br>
-      <em class="fr">2 boules de glace chocolat, 1 boule vanille, coulis chocolat, chantilly</em>
-      <em class="en">2 scoops chocolate ice cream, 1 scoop vanilla, chocolate sauce, whipped cream</em>
-    </li>
-    <li>
-      <strong>Dame Blanche</strong> – 10€<br>
-      <em class="fr">3 boules de glace vanille, coulis chocolat, chantilly</em>
-      <em class="en">3 scoops vanilla ice cream, chocolate sauce, whipped cream</em>
-    </li>
-    <li>
-      <strong>Colonel</strong> – 10€<br>
-      <em class="fr">2 boules sorbet citron, vodka</em>
-      <em class="en">2 scoops lemon sorbet, vodka</em>
-    </li>
-  </ul>
-</section>
+          <!-- Coupes (10€) -->
+          <li>
+            <strong>Café liégeois</strong> – 10€<br>
+            <em class="fr">2 boules de glace café, 1 boule vanille, coulis café, chantilly</em>
+            <em class="en">2 scoops coffee ice cream, 1 scoop vanilla, coffee sauce, whipped cream</em>
+          </li>
+          <li>
+            <strong>Chocolat liégeois</strong> – 10€<br>
+            <em class="fr">2 boules de glace chocolat, 1 boule vanille, coulis chocolat, chantilly</em>
+            <em class="en">2 scoops chocolate ice cream, 1 scoop vanilla, chocolate sauce, whipped cream</em>
+          </li>
+          <li>
+            <strong>Dame Blanche</strong> – 10€<br>
+            <em class="fr">3 boules de glace vanille, coulis chocolat, chantilly</em>
+            <em class="en">3 scoops vanilla ice cream, chocolate sauce, whipped cream</em>
+          </li>
+          <li>
+            <strong>Colonel</strong> – 10€<br>
+            <em class="fr">2 boules sorbet citron, vodka</em>
+            <em class="en">2 scoops lemon sorbet, vodka</em>
+          </li>
+        </ul>
+      </section>
 
-<!-- ALLERGÈNES -->
-<section id="allergenes" class="menu-section">
-  <h2>Allergènes</h2>
+      <!-- ALLERGÈNES -->
+      <section id="allergenes" class="menu-section" data-aos="fade-up">
+        <h2>Allergènes</h2>
 
-  <div class="allergen-table">
-    <table>
-      <thead>
-        <tr>
-          <th>Plat</th>
-          <th>Céréales<br><em class="en">Gluten</em></th>
-          <th>Crustacés<br><em class="en">Crustaceans</em></th>
-          <th>Œufs<br><em class="en">Eggs</em></th>
-          <th>Poissons<br><em class="en">Fish</em></th>
-          <th>Arachides<br><em class="en">Peanuts</em></th>
-          <th>Soja<br><em class="en">Soy</em></th>
-          <th>Lait<br><em class="en">Milk</em></th>
-          <th>Fruits à coques<br><em class="en">Tree nuts</em></th>
-          <th>Céleri<br><em class="en">Celery</em></th>
-          <th>Moutarde<br><em class="en">Mustard</em></th>
-          <th>Sésame<br><em class="en">Sesame</em></th>
-          <th>Sulfites<br><em class="en">Sulphites</em></th>
-          <th>Lupin<br><em class="en">Lupin</em></th>
-          <th>Mollusques<br><em class="en">Molluscs</em></th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- ENTRÉES -->
-        <tr><td><strong>Salade Tomate Burrata</strong></td>
-          <td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr><td><strong>Salade de Chèvre Chaud</strong></td>
-          <td>●</td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr><td><strong>Salade Le 716</strong></td>
-          <td>●</td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr><td><strong>Assiette de Charcuterie</strong></td>
-          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>○</td><td></td><td></td>
-        </tr>
+        <div class="allergen-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Plat</th>
+                <th>Céréales<br><em class="en">Gluten</em></th>
+                <th>Crustacés<br><em class="en">Crustaceans</em></th>
+                <th>Œufs<br><em class="en">Eggs</em></th>
+                <th>Poissons<br><em class="en">Fish</em></th>
+                <th>Arachides<br><em class="en">Peanuts</em></th>
+                <th>Soja<br><em class="en">Soy</em></th>
+                <th>Lait<br><em class="en">Milk</em></th>
+                <th>Fruits à coques<br><em class="en">Tree nuts</em></th>
+                <th>Céleri<br><em class="en">Celery</em></th>
+                <th>Moutarde<br><em class="en">Mustard</em></th>
+                <th>Sésame<br><em class="en">Sesame</em></th>
+                <th>Sulfites<br><em class="en">Sulphites</em></th>
+                <th>Lupin<br><em class="en">Lupin</em></th>
+                <th>Mollusques<br><em class="en">Molluscs</em></th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- ENTRÉES -->
+              <tr><td><strong>Salade Tomate Burrata</strong></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+              </tr>
+              <tr><td><strong>Salade de Chèvre Chaud</strong></td>
+                <td>●</td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+              </tr>
+              <tr><td><strong>Salade Le 716</strong></td>
+                <td>●</td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+              </tr>
+              <tr><td><strong>Assiette de Charcuterie</strong></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>○</td><td></td><td></td>
+              </tr>
 
-        <!-- PLATS -->
-        <tr><td><strong>Entrecôte de Bœuf 180 g</strong></td>
-          <td></td><td></td><td></td><td></td><td></td><td></td><td>○</td><td></td><td></td><td></td><td></td><td>○</td><td></td><td></td>
-        </tr>
-        <tr><td><strong>Escalope Milanaise Poulet</strong></td>
-          <td>●</td><td></td><td>○</td><td></td><td></td><td></td><td>○</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr><td><strong>Escalope de Poulet Forestière</strong></td>
-          <td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr><td><strong>Pavé de Saumon</strong></td>
-          <td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr><td><strong>Tartare de Bœuf</strong></td>
-          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td>
-        </tr>
+              <!-- PLATS -->
+              <tr><td><strong>Entrecôte de Bœuf 180 g</strong></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td>○</td><td></td><td></td><td></td><td></td><td>○</td><td></td><td></td>
+              </tr>
+              <tr><td><strong>Escalope Milanaise Poulet</strong></td>
+                <td>●</td><td></td><td>○</td><td></td><td></td><td></td><td>○</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+              </tr>
+              <tr><td><strong>Escalope de Poulet Forestière</strong></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+              </tr>
+              <tr><td><strong>Pavé de Saumon</strong></td>
+                <td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+              </tr>
+              <tr><td><strong>Tartare de Bœuf</strong></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td>
+              </tr>
 
-        <!-- PÂTES -->
-        <tr><td><strong>Pâtes Carbonara</strong></td>
-          <td>●</td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr><td><strong>Pâtes au Saumon</strong></td>
-          <td>●</td><td></td><td></td><td>●</td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr><td><strong>Pâtes au Roquefort</strong></td>
-          <td>●</td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr><td><strong>Pâtes Forestière</strong></td>
-          <td>●</td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
+              <!-- PÂTES -->
+              <tr><td><strong>Pâtes Carbonara</strong></td>
+                <td>●</td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+              </tr>
+              <tr><td><strong>Pâtes au Saumon</strong></td>
+                <td>●</td><td></td><td></td><td>●</td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+              </tr>
+              <tr><td><strong>Pâtes au Roquefort</strong></td>
+                <td>●</td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+              </tr>
+              <tr><td><strong>Pâtes Forestière</strong></td>
+                <td>●</td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+              </tr>
 
-        <!-- MENU ENFANT -->
-        <tr><td><strong>Menu Enfant (steak haché ou nuggets)</strong></td>
-          <td>○</td><td></td><td>○</td><td></td><td></td><td></td><td>○</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
+              <!-- MENU ENFANT -->
+              <tr><td><strong>Menu Enfant (steak haché ou nuggets)</strong></td>
+                <td>○</td><td></td><td>○</td><td></td><td></td><td></td><td>○</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+              </tr>
 
-        <!-- DESSERTS -->
-        <tr><td><strong>Crèmes glacées – Sorbets</strong></td>
-          <td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr><td><strong>Café liégeois</strong></td>
-          <td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr><td><strong>Chocolat liégeois</strong></td>
-          <td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr><td><strong>Dame Blanche</strong></td>
-          <td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr><td><strong>Colonel</strong></td>
-          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
+              <!-- DESSERTS -->
+              <tr><td><strong>Crèmes glacées – Sorbets</strong></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+              </tr>
+              <tr><td><strong>Café liégeois</strong></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+              </tr>
+              <tr><td><strong>Chocolat liégeois</strong></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+              </tr>
+              <tr><td><strong>Dame Blanche</strong></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+              </tr>
+              <tr><td><strong>Colonel</strong></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+              </tr>
 
-        <!-- VINS / EAUX -->
-        <tr><td><strong>Verre de vin / Piscine / Côtes de Provence (25–50 cl) / Bouteilles</strong></td>
-          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td>
-        </tr>
-        <tr><td><strong>Eaux (Vittel, Sanpellegrino)</strong></td>
-          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+              <!-- VINS / EAUX -->
+              <tr><td><strong>Verre de vin / Piscine / Côtes de Provence (25–50 cl) / Bouteilles</strong></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td>
+              </tr>
+              <tr><td><strong>Eaux (Vittel, Sanpellegrino)</strong></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-  <p style="margin-top:10px">
-    <em class="fr">● contient &nbsp;–&nbsp; ○ peut contenir / selon recette, sauce ou fournisseur.</em><br>
-    <em class="en">● contains &nbsp;–&nbsp; ○ may contain / depends on recipe, sauce or supplier.</em>
-  </p>
-</section>
-
-
+        <p style="margin-top:10px">
+          <em class="fr">● contient &nbsp;–&nbsp; ○ peut contenir / selon recette, sauce ou fournisseur.</em><br>
+          <em class="en">● contains &nbsp;–&nbsp; ○ may contain / depends on recipe, sauce or supplier.</em>
+        </p>
+      </section>
     </main>
 
     <!-- BOUTON + MAP EN BAS -->
     <a class="btn"
        href="https://maps.app.goo.gl/JC6rrwSnuoqnoLat5"
        target="_blank" rel="noopener noreferrer"
-       aria-label="Ouvrir l’itinéraire vers Le 716 dans Google Maps">
+       aria-label="Ouvrir l’itinéraire vers Le 716 dans Google Maps"
+       data-aos="fade-up">
       📍 Voir sur Google Maps
     </a>
 
-    <div class="map-container" aria-label="Carte Google Maps intégrée">
+    <div class="map-container" aria-label="Carte Google Maps intégrée" data-aos="fade-up">
       <iframe
         title="Carte Google Maps : Bar Restaurant Le 716"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5790.829205617517!2d6.565276313040976!3d43.47281727099083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ceaf8df92cc18d%3A0x8b398e9b0c891d89!2sBar%20Restaurant%20LE%20716!5e0!3m2!1sfr!2sfr!4v1756230283010!5m2!1sfr!2sfr"
@@ -362,16 +371,14 @@
     </div>
   </div>
 
-<footer>
-  Réalisé par
-  <a href="https://www.instagram.com/clka.23/" target="_blank" rel="noopener noreferrer">@clka.23</a>
-  •
-  <a href="aboutus.html">À propos de nous</a>
-  •
-  <a href="mentions-legales.html">Mentions légales</a>
-</footer>
-
-
+  <footer>
+    Réalisé par
+    <a href="https://www.instagram.com/clka.23/" target="_blank" rel="noopener noreferrer">@clka.23</a>
+    •
+    <a href="aboutus.html">À propos de nous</a>
+    •
+    <a href="mentions-legales.html">Mentions légales</a>
+  </footer>
 
   <noscript>
     <p style="opacity:.8">JavaScript est désactivé. La carte reste visible ; utilisez le bouton « Voir sur Google Maps » si besoin.</p>

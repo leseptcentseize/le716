@@ -13,6 +13,11 @@ body {
   padding: 20px;
 }
 
+[data-aos] {
+  opacity: 0;
+  transition-property: transform, opacity;
+}
+
 .lang-switch {
   position: absolute;
   top: 15px;
