@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Site en construction</title>
+  <title>Restaurant Le 716</title>
   <meta name="robots" content="index, follow">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="color-scheme" content="dark light">
@@ -18,87 +18,332 @@
                  base-uri 'self';
                  upgrade-insecure-requests">
 
-  <style>
-    body {
-      margin: 0;
-      min-height: 100svh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      background: linear-gradient(135deg, #1e1e2f, #3e3e68, #1e1e2f);
-      font-family: system-ui,-apple-system,Segoe UI,Roboto,Tahoma,Arial,sans-serif;
-      color: #fff;
-      overflow-x: hidden;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .container { max-width: 600px; width: 100%; animation: fadeIn 1.2s ease-in-out; }
-
-    .loader {
-      border: 6px solid rgba(255, 255, 255, 0.2);
-      border-top: 6px solid #ffcc00;
-      border-radius: 50%;
-      width: 70px; height: 70px;
-      animation: spin 1.2s linear infinite;
-      margin: 0 auto 20px auto;
-    }
-
-    h1 {
-      font-size: 2.3rem;
-      margin-bottom: 10px;
-      background: linear-gradient(90deg, #ffcc00, #ff0066, #00ccff);
-      background-clip: text; -webkit-background-clip: text;
-      color: transparent; -webkit-text-fill-color: transparent;
-      animation: gradientMove 3s infinite linear;
-      background-size: 200% auto;
-    }
-
-    p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 20px; }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 20px;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: 700;
-      text-decoration: none;
-      color: #fff;
-      background: #00cc66;
-      transition: 0.2s ease;
-      margin-bottom: 20px;
-    }
-    .btn:hover { background: #0a9c56; transform: translateY(-1px); }
-    .btn:focus-visible { outline: 2px solid #ffcc00; outline-offset: 2px; }
-
-    .map-container {
-      position: relative;
-      width: 100%; max-width: 500px;
-      margin: 0 auto 20px auto;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    }
-    .map-container iframe { width: 100%; height: 300px; border: 0; display: block; }
-
-    footer { margin-top: 20px; font-size: 0.9rem; opacity: 0.8; }
-    footer a { color: #ffcc00; text-decoration: none; transition: 0.2s ease; }
-    footer a:hover { color: #00ccff; text-shadow: 0 0 6px rgba(0,204,255,0.7); }
-
-    @keyframes spin { to { transform: rotate(360deg); } }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes gradientMove { 0% { background-position: 0% 50%; } 100% { background-position: 100% 50%; } }
-
-    @media (prefers-reduced-motion: reduce) { .loader, h1 { animation: none; } }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <div class="loader" aria-hidden="true"></div>
-    <h1>Site en construction</h1>
-    <p>En attendant, retrouvez-nous au restaurant !</p>
+    <h1>Restaurant • Bar<br>Le 716</h1>
+    <p>Une expérience culinaire unique au Muy</p>
 
+    <!-- SECTION MENU -->
+    <main>
+      <!-- ENTRÉES -->
+      <section id="entrees" class="menu-section">
+        <h2>Entrées</h2>
+        <ul>
+          <li>
+            <strong>Salade Tomate Burrata</strong> – 17€<br>
+            <em class="fr">Tomates, Burrata</em>
+            <em class="en">Tomatoes, Burrata</em>
+          </li>
+          <li>
+            <strong>Salade de Chèvre Chaud</strong> – 18€<br>
+            <em class="fr">Salade verte, tomates, pommes, olives, œuf, croûton de chèvre</em>
+            <em class="en">Green salad, tomatoes, apples, olives, egg, goat cheese toast</em>
+          </li>
+          <li>
+            <strong>Salade Le 716</strong> – 18€<br>
+            <em class="fr">Salade, tomates, poulet pané, maïs, feta de brebis</em>
+            <em class="en">Salad, tomatoes, breaded chicken, corn, sheep's milk feta</em>
+          </li>
+          <li>
+            <strong>Assiette de Charcuterie</strong> – 15€<br>
+            <em class="fr">Saucissons, mortadelle, pâté de campagne, jambon cru</em>
+            <em class="en">Saucisson (French cured sausage), mortadella, country pâté, dry-cured ham</em>
+          </li>
+        </ul>
+      </section>
+
+      <!-- PLATS -->
+      <section id="plats" class="menu-section">
+        <h2>Plats</h2>
+        <ul>
+          <li>
+            <strong>Entrecôte de Bœuf 180 g</strong> – 22€<br>
+            <em class="en">Beef entrecôte 180 g</em>
+          </li>
+          <li>
+            <strong>Escalope Milanaise Poulet</strong> – 18€<br>
+            <em class="en">Chicken Milanese escalope</em>
+          </li>
+          <li>
+            <strong>Escalope de Poulet Forestière</strong> – 18€<br>
+            <em class="en">Chicken escalope with mushroom sauce</em>
+          </li>
+          <li>
+            <strong>Pavé de Saumon</strong> – 20€<br>
+            <em class="en">Salmon fillet</em>
+          </li>
+          <li>
+            <strong>Tartare de Bœuf</strong> – 19€<br>
+            <em class="fr">Bœuf haché, cornichons, câpres, oignons, moutarde, tabasco</em>
+            <em class="en">Ground beef, pickles, capers, onions, mustard, Tabasco</em>
+          </li>
+        </ul>
+
+        <h3>Accompagnements</h3>
+<ul>
+  <li>
+    <em class="fr">Frites, pâtes, tomates provençale, ratatouille, riz</em>
+    <em class="en">French fries, pasta, Provençal tomatoes, ratatouille, rice</em>
+  </li>
+</ul>
+
+<h3>Sauces</h3>
+<ul>
+  <li>
+    <em class="fr">Forestière, poivre, roquefort</em>
+    <em class="en">Mushroom sauce, pepper, Roquefort cheese</em>
+  </li>
+</ul>
+
+
+      </section>
+
+            <!-- PÂTES -->
+      <section id="pates" class="menu-section">
+        <h2>Pâtes</h2>
+        <ul>
+          <li>
+            <strong>Pâtes Carbonara</strong> – 15€<br>
+            <em class="fr">Pâtes, lardons, crème fraîche, oignons</em>
+            <em class="en">Pasta, bacon, cream, onions</em>
+          </li>
+          <li>
+            <strong>Pâtes au Saumon</strong> – 17€<br>
+            <em class="fr">Pâtes, saumon fumé, crème fraîche, oignons</em>
+            <em class="en">Pasta, smoked salmon, cream, onions</em>
+          </li>
+          <li>
+            <strong>Pâtes au Roquefort</strong> – 17€<br>
+            <em class="fr">Pâtes, sauce roquefort</em>
+            <em class="en">Pasta, Roquefort sauce</em>
+          </li>
+          <li>
+            <strong>Pâtes Forestière</strong> – 16€<br>
+            <em class="fr">Pâtes, sauce champignon</em>
+            <em class="en">Pasta, mushroom sauce</em>
+          </li>
+        </ul>
+      </section>
+
+      <!-- MENU ENFANT -->
+<section id="menu-enfant" class="menu-section">
+  <h2>Menu Enfant<br>(-12 ans)</h2>
+  <ul>
+    <li>
+      <strong>Menu Enfant avec boisson</strong> – 10€<br>
+      <em class="fr">Steak haché ou nuggets<br>(accompagnement aux choix)</em>
+      <em class="en">Ground beef patty or nuggets (choice of side)</em>
+    </li>
+  </ul>
+</section>
+
+<!-- VINS – EAU -->
+<section id="vins-eau" class="menu-section">
+  <h2>Vins – Eau</h2>
+  <ul>
+    <!-- Verres / Piscine -->
+    <li>
+      <strong>Verre de Vin (Côtes de Provence)</strong> 3€<br>
+      <em class="en">Glass of wine (Côtes de Provence)</em>
+    </li>
+    <li>
+      <strong>Piscine de Vin (Côtes de Provence)</strong> 6€<br>
+      <em class="en">“Wine piscine” (Côtes de Provence, wine served on ice)</em>
+    </li>
+
+    <!-- Carafes / Pichets -->
+    <li>
+      <strong>Côtes de Provence 50 cl</strong> 13€<br>
+      <em class="en">Côtes de Provence 50 cl</em>
+    </li>
+    <li>
+      <strong>Côtes de Provence 25 cl</strong> 6,50€<br>
+      <em class="en">Côtes de Provence 25 cl</em>
+    </li>
+
+    <!-- Bouteilles -->
+    <li>
+      <strong>Domaine de la Maurette (Rouge · Rosé · Blanc)<br>Bouteille 75 cl</strong> 24€<br>
+      <em class="en">Domaine de la Maurette (Red · Rosé · White)<br>75 cl bottle</em>
+    </li>
+    <li>
+      <strong>Château du Rouet (TERES) (Rouge · Rosé · Blanc)<br>Bouteille 75 cl</strong> 23€<br>
+      <em class="en">Château du Rouet (TERES) (Red · Rosé · White)<br>75 cl bottle</em>
+    </li>
+
+    <!-- Eaux -->
+    <li>
+      <strong>Vittel 1 L (bouteille)</strong> 10€<br>
+      <em class="en">Vittel 1 L (bottle)</em>
+    </li>
+    <li>
+      <strong>Vittel 0,5 L (bouteille)</strong> 5€<br>
+      <em class="en">Vittel 0.5 L (bottle)</em>
+    </li>
+    <li>
+      <strong>Sanpellegrino 1 L (bouteille)</strong> 10€<br>
+      <em class="en">Sanpellegrino 1 L (bottle)</em>
+    </li>
+    <li>
+      <strong>Sanpellegrino 0,5 L (bouteille)</strong> 5€<br>
+      <em class="en">Sanpellegrino 0.5 L (bottle)</em>
+    </li>
+  </ul>
+</section>
+
+<!-- DESSERTS -->
+<section id="desserts" class="menu-section">
+  <h2>Desserts</h2>
+  <ul>
+    <!-- Glaces & Sorbets -->
+    <li>
+      <strong>Crèmes glacées – Sorbets</strong><br>
+      <em class="fr">Parfums : Vanille, Chocolat, Pistache, Fraise, Café, Citron vert</em>
+      <em class="en">Flavors: Vanilla, Chocolate, Pistachio, Strawberry, Coffee, Lime</em>
+      <em class="fr">1 boule : 3€<br>2 boules : 5€<br>3 boules : 7€<br>Supplément chantilly : 1€</em>
+      <em class="en">1 scoop: €3<br>2 scoops: €5<br>3 scoops: €7<br>Extra whipped cream: €1</em>
+    </li>
+
+    <!-- Coupes (10€) -->
+    <li>
+      <strong>Café liégeois</strong> – 10€<br>
+      <em class="fr">2 boules de glace café, 1 boule vanille, coulis café, chantilly</em>
+      <em class="en">2 scoops coffee ice cream, 1 scoop vanilla, coffee sauce, whipped cream</em>
+    </li>
+    <li>
+      <strong>Chocolat liégeois</strong> – 10€<br>
+      <em class="fr">2 boules de glace chocolat, 1 boule vanille, coulis chocolat, chantilly</em>
+      <em class="en">2 scoops chocolate ice cream, 1 scoop vanilla, chocolate sauce, whipped cream</em>
+    </li>
+    <li>
+      <strong>Dame Blanche</strong> – 10€<br>
+      <em class="fr">3 boules de glace vanille, coulis chocolat, chantilly</em>
+      <em class="en">3 scoops vanilla ice cream, chocolate sauce, whipped cream</em>
+    </li>
+    <li>
+      <strong>Colonel</strong> – 10€<br>
+      <em class="fr">2 boules sorbet citron, vodka</em>
+      <em class="en">2 scoops lemon sorbet, vodka</em>
+    </li>
+  </ul>
+</section>
+
+<!-- ALLERGÈNES -->
+<section id="allergenes" class="menu-section">
+  <h2>Allergènes</h2>
+
+  <div class="allergen-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Plat</th>
+          <th>Céréales<br><em class="en">Gluten</em></th>
+          <th>Crustacés<br><em class="en">Crustaceans</em></th>
+          <th>Œufs<br><em class="en">Eggs</em></th>
+          <th>Poissons<br><em class="en">Fish</em></th>
+          <th>Arachides<br><em class="en">Peanuts</em></th>
+          <th>Soja<br><em class="en">Soy</em></th>
+          <th>Lait<br><em class="en">Milk</em></th>
+          <th>Fruits à coques<br><em class="en">Tree nuts</em></th>
+          <th>Céleri<br><em class="en">Celery</em></th>
+          <th>Moutarde<br><em class="en">Mustard</em></th>
+          <th>Sésame<br><em class="en">Sesame</em></th>
+          <th>Sulfites<br><em class="en">Sulphites</em></th>
+          <th>Lupin<br><em class="en">Lupin</em></th>
+          <th>Mollusques<br><em class="en">Molluscs</em></th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- ENTRÉES -->
+        <tr><td><strong>Salade Tomate Burrata</strong></td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr><td><strong>Salade de Chèvre Chaud</strong></td>
+          <td>●</td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr><td><strong>Salade Le 716</strong></td>
+          <td>●</td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr><td><strong>Assiette de Charcuterie</strong></td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>○</td><td></td><td></td>
+        </tr>
+
+        <!-- PLATS -->
+        <tr><td><strong>Entrecôte de Bœuf 180 g</strong></td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td>○</td><td></td><td></td><td></td><td></td><td>○</td><td></td><td></td>
+        </tr>
+        <tr><td><strong>Escalope Milanaise Poulet</strong></td>
+          <td>●</td><td></td><td>○</td><td></td><td></td><td></td><td>○</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr><td><strong>Escalope de Poulet Forestière</strong></td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr><td><strong>Pavé de Saumon</strong></td>
+          <td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr><td><strong>Tartare de Bœuf</strong></td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td>
+        </tr>
+
+        <!-- PÂTES -->
+        <tr><td><strong>Pâtes Carbonara</strong></td>
+          <td>●</td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr><td><strong>Pâtes au Saumon</strong></td>
+          <td>●</td><td></td><td></td><td>●</td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr><td><strong>Pâtes au Roquefort</strong></td>
+          <td>●</td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr><td><strong>Pâtes Forestière</strong></td>
+          <td>●</td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+
+        <!-- MENU ENFANT -->
+        <tr><td><strong>Menu Enfant (steak haché ou nuggets)</strong></td>
+          <td>○</td><td></td><td>○</td><td></td><td></td><td></td><td>○</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+
+        <!-- DESSERTS -->
+        <tr><td><strong>Crèmes glacées – Sorbets</strong></td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr><td><strong>Café liégeois</strong></td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr><td><strong>Chocolat liégeois</strong></td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr><td><strong>Dame Blanche</strong></td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr><td><strong>Colonel</strong></td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+
+        <!-- VINS / EAUX -->
+        <tr><td><strong>Verre de vin / Piscine / Côtes de Provence (25–50 cl) / Bouteilles</strong></td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>●</td><td></td><td></td>
+        </tr>
+        <tr><td><strong>Eaux (Vittel, Sanpellegrino)</strong></td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p style="margin-top:10px">
+    <em class="fr">● contient &nbsp;–&nbsp; ○ peut contenir / selon recette, sauce ou fournisseur.</em><br>
+    <em class="en">● contains &nbsp;–&nbsp; ○ may contain / depends on recipe, sauce or supplier.</em>
+  </p>
+</section>
+
+
+    </main>
+
+    <!-- BOUTON + MAP EN BAS -->
     <a class="btn"
        href="https://maps.app.goo.gl/JC6rrwSnuoqnoLat5"
        target="_blank" rel="noopener noreferrer"
@@ -117,10 +362,16 @@
     </div>
   </div>
 
-  <footer>
-    Réalisé par
-    <a href="https://www.instagram.com/clka.23/" target="_blank" rel="noopener noreferrer">@clka.23</a>
-  </footer>
+<footer>
+  Réalisé par
+  <a href="https://www.instagram.com/clka.23/" target="_blank" rel="noopener noreferrer">@clka.23</a>
+  •
+  <a href="aboutus.html">À propos de nous</a>
+  •
+  <a href="mentions-legales.html">Mentions légales</a>
+</footer>
+
+
 
   <noscript>
     <p style="opacity:.8">JavaScript est désactivé. La carte reste visible ; utilisez le bouton « Voir sur Google Maps » si besoin.</p>
