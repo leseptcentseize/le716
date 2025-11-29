@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://leseptcentseize.github.io/le716/sitemap.xml

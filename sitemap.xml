@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://leseptcentseize.github.io/le716/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://leseptcentseize.github.io/le716/restaurant.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://leseptcentseize.github.io/le716/pizzas.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://leseptcentseize.github.io/le716/allergenes.html</loc>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://leseptcentseize.github.io/le716/aboutus.html</loc>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://leseptcentseize.github.io/le716/aboutus-en.html</loc>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://leseptcentseize.github.io/le716/mentions-legales.html</loc>
+    <priority>0.2</priority>
+  </url>
+
+  <url>
+    <loc>https://leseptcentseize.github.io/le716/mentions-legales-en.html</loc>
+    <priority>0.1</priority>
+  </url>
+
+</urlset>

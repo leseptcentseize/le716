@@ -43,9 +43,69 @@ body {
 }
 
 .container {
-  max-width: 600px;
+  max-width: 900px;
   width: 100%;
   animation: fadeIn 1.2s ease-in-out;
+  margin: 0 auto;
+}
+
+.intro {
+  max-width: 650px;
+  margin: 10px auto 30px auto;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Grille des deux cartes (Restaurant / Pizzas) */
+.menu-choices {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin: 30px auto 40px auto;
+}
+
+/* À partir d’une certaine largeur, on passe en 2 colonnes */
+@media (min-width: 700px) {
+  .menu-choices {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Cartes de choix de menu */
+.menu-card {
+  background: rgba(255,255,255,0.04);
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu-card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #ffcc00, #ff0066, #00ccff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: gradientMove 4s infinite linear;
+}
+
+.menu-card p {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  margin-bottom: 16px;
+}
+
+.card-btn {
+  align-self: center;
+  margin-top: auto;
 }
 
 h1 {
