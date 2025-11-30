@@ -51,6 +51,9 @@
   </script>
 </head>
 <body>
+      <!-- Fond image + dégradé -->
+  <div class="hero-bg"></div>
+  
   <div class="container">
     <h1 data-aos="fade-up">Restaurant • Bar<br>Le 716</h1>
     <p data-aos="fade-up">Une expérience culinaire unique au Muy</p>
@@ -309,5 +312,20 @@
   <noscript>
     <p style="opacity:.8">JavaScript est désactivé. La carte reste visible ; utilisez le bouton « Voir sur Google Maps » si besoin.</p>
   </noscript>
+
+  <script>
+    // Fade du fond image au scroll
+    document.addEventListener("scroll", () => {
+      const heroBg = document.querySelector(".hero-bg");
+      if (!heroBg) return;
+
+      const maxFade = 600; // hauteur de scroll (en px) où l'image devient totalement transparente
+      const y = window.scrollY;
+      const ratio = Math.max(0, 1 - y / maxFade);
+
+      heroBg.style.opacity = ratio.toFixed(2);
+    });
+  </script>
+
 </body>
 </html>

@@ -56,6 +56,61 @@ body {
   opacity: 0.9;
 }
 
+/* Fond image 16/9 + dégradé */
+.hero-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  /* PC : image pleine + dégradé blanc */
+  background:
+   
+    url("chaisesbar.webp") center top / cover no-repeat;
+
+  opacity: 1;
+  transition: opacity 0.2s linear; /* fondu smooth au scroll */
+}
+
+
+/* 📱 MOBILE : image en contain + fondu naturel du bas */
+@media (max-width: 768px) {
+  .hero-bg {
+    background:
+      /* 1 — dégradé principal (en haut) */
+      linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.35) 0%,
+        rgba(255, 255, 255, 1) 30%,
+        rgba(0, 0, 0, 0.00) 75%
+      ),
+
+      /* 2 — dégradé spécial pour adoucir la fin de l'image */
+      linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,   /* laisser l’image visible */
+        rgba(0, 0, 0, 1) 100%  /* fondu vers blanc */
+      ),
+
+      /* 3 — l’image elle-même en 16/9 respecté */
+      url("chaisesbar.webp") center top / contain no-repeat;
+
+    background-color: #000; /* blanc sous l’image */
+  }
+}
+
+
+/* On s'assure que le contenu passe devant le fond */
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+}
+
 /* Grille des deux cartes (Restaurant / Pizzas) */
 .menu-choices {
   display: grid;
@@ -73,15 +128,25 @@ body {
 
 /* Cartes de choix de menu */
 .menu-card {
-  background: rgba(255,255,255,0.04);
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.35);
   border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   padding: 20px;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
+
+/* Cards uniquement pour l’index */
+.menu-card-index {
+  background: rgba(40, 40, 40, 0.65) !important;
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px);
+}
+
 
 .menu-card h2 {
   font-size: 1.4rem;
@@ -197,7 +262,7 @@ footer a:hover {
   padding: 20px;
   max-width: 700px;
   text-align: left;
-  background: rgba(255,255,255,0.04);
+  background: rgba(40, 40, 40, 0.65) !important;
   border-radius: 16px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.25);
 }
