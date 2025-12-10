@@ -1,165 +1,520 @@
-body {
-  margin: 0;
-  min-height: 100svh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background: linear-gradient(135deg, #1e1e2f, #3e3e68, #1e1e2f);
-  font-family: system-ui,-apple-system,Segoe UI,Roboto,Tahoma,Arial,sans-serif;
-  color: #fff;
-  overflow-x: hidden;
-  text-align: center;
-  padding: 20px;
+/* -------------------------------------------
+   BASE
+------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background:
+    radial-gradient(circle at top, #2b2b2b 0%, #050505 55%, #000 100%);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Tahoma, Arial, sans-serif;
+  color: #f5f5f5;
+  overflow-x: hidden;
+}
+
+/* AOS base */
 [data-aos] {
   opacity: 0;
   transition-property: transform, opacity;
 }
 
-.lang-switch {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-}
-
-.lang-switch a {
-  display: inline-block;
-  padding: 6px 12px;
-  background: rgba(255,255,255,0.04); /* même style que .menu-section */
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #ffcc00; /* ton doré */
-  text-decoration: none;
-  transition: 0.2s ease;
-}
-
-.lang-switch a:hover {
-  background: rgba(255,255,255,0.1);
-  color: #00ccff; /* effet bleu au hover, comme dans ton thème */
-}
-
-.container {
-  max-width: 900px;
+/* Conteneur général */
+.page-wrap {
+  position: relative;
+  z-index: 1;
   width: 100%;
-  animation: fadeIn 1.2s ease-in-out;
+  max-width: 1100px;
+  padding: 32px 20px 24px;
+}
+
+/* Contenu principal centré */
+.container {
+  max-width: 960px;
+  width: 100%;
   margin: 0 auto;
+  animation: fadeIn 1.2s ease-in-out;
 }
 
-.intro {
-  max-width: 650px;
-  margin: 10px auto 30px auto;
-  font-size: 1rem;
-  opacity: 0.9;
-}
+/* -------------------------------------------
+   INTRO CINÉMATIQUE PREMIUM
+------------------------------------------- */
 
-/* Fond image 16/9 + dégradé */
-.hero-bg {
+.intro-overlay {
   position: fixed;
   inset: 0;
-  z-index: -1;
+  z-index: 9999;
+  background: radial-gradient(circle at top, #222 0%, #000 60%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   pointer-events: none;
-
-  /* PC : image pleine + dégradé blanc */
-  background:
-   
-    url("chaisesbar.webp") center top / cover no-repeat;
-
-  opacity: 1;
-  transition: opacity 0.2s linear; /* fondu smooth au scroll */
+  animation: introFade 0.7s ease-out 0.15s forwards;
 }
 
+.intro-inner {
+  position: relative;
+  text-align: center;
+  padding: 36px 42px;
+  border-radius: 28px;
+  background: radial-gradient(circle at top, rgba(255,255,255,0.05), rgba(0,0,0,0.95));
+  box-shadow:
+    0 18px 60px rgba(0,0,0,0.85),
+    0 0 0 1px rgba(255,255,255,0.06);
+  overflow: hidden;
+}
 
-/* 📱 MOBILE : image en contain + fondu naturel du bas */
-@media (max-width: 768px) {
-  .hero-bg {
-    background:
-      /* 1 — dégradé principal (en haut) */
-      linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.35) 0%,
-        rgba(255, 255, 255, 1) 30%,
-        rgba(0, 0, 0, 0.00) 75%
-      ),
+.intro-pizza-ring {
+  position: absolute;
+  inset: -40%;
+  border-radius: 50%;
+  background:
+    conic-gradient(from 120deg,
+      rgba(231,76,60,0.25),
+      rgba(39,174,96,0.25),
+      rgba(255,255,255,0.05),
+      rgba(231,76,60,0.25));
+  opacity: 0.35;
+  filter: blur(4px);
+  animation: ringSpin 7s linear infinite;
+}
 
-      /* 2 — dégradé spécial pour adoucir la fin de l'image */
-      linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0) 0%,   /* laisser l’image visible */
-        rgba(0, 0, 0, 1) 100%  /* fondu vers blanc */
-      ),
+.intro-logo {
+  position: relative;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  font-weight: 600;
+}
 
-      /* 3 — l’image elle-même en 16/9 respecté */
-      url("chaisesbar.webp") center top / contain no-repeat;
+.intro-le {
+  font-size: 1.3rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #f5f5f5;
+}
 
-    background-color: #000; /* blanc sous l’image */
+.intro-716 {
+  font-size: 3.4rem;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+}
+
+.intro-tagline {
+  position: relative;
+  margin: 10px 0 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #d4d4d4;
+}
+
+/* Intro animation */
+@keyframes introFade {
+  0%   { opacity: 1; transform: translateY(0); }
+  70%  { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); visibility: hidden; }
+}
+
+@keyframes ringSpin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Réduction motion */
+@media (prefers-reduced-motion: reduce) {
+  .intro-overlay {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+  }
+  .intro-pizza-ring {
+    animation: none;
   }
 }
 
+/* -------------------------------------------
+   HERO + FOND
+------------------------------------------- */
 
-/* On s'assure que le contenu passe devant le fond */
-body {
-  margin: 0;
-  min-height: 100vh;
+/* Fond image 16/9 + dégradé sombre */
+.hero-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at top, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.95) 60%, #000 100%),
+    url("chaisesbar.webp") center top / cover no-repeat;
+  opacity: 0.9;
 }
 
-.container {
-  position: relative;
-  z-index: 1;
+/* MOBILE : garder l’image mais plus contenue */
+@media (max-width: 768px) {
+  .hero-bg {
+    background:
+      linear-gradient(to bottom,
+        rgba(0,0,0,0.75) 0%,
+        rgba(0,0,0,0.95) 45%,
+        #000 100%),
+      url("chaisesbar.webp") center top / contain no-repeat;
+  }
 }
 
-/* Grille des deux cartes (Restaurant / Pizzas) */
+/* Bloc hero */
+.hero {
+  position: relative; /* important pour le ::before */
+  padding: 40px 24px 24px;
+  border-radius: 28px;
+
+  /* teinte sombre légèrement transparente */
+  background: rgba(15, 15, 15, 0.1);
+
+  /* verre dépoli */
+  backdrop-filter: blur(5px) saturate(180%);
+  -webkit-backdrop-filter: blur(0px) saturate(180%);
+
+  box-shadow:
+    0 18px 55px rgba(0, 0, 0, 0.75),
+    0 0 0 1px rgba(255, 255, 255, 0.10);
+
+  color: #f9f9f9;
+}
+
+/* reflet “verre” par-dessus */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.35) 0%,   /* gros highlight en haut/gauche */
+    rgba(255, 255, 255, 0.05) 35%,
+    rgba(255, 255, 255, 0.00) 60%
+  );
+  opacity: 0.9;
+}
+
+
+.hero-main {
+  text-align: left;
+}
+
+.hero-logo-block {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hero-le {
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #f0f0f0;
+}
+
+.hero-716 {
+  font-size: clamp(3.1rem, 5vw, 3.8rem);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: #ffffff;
+}
+
+.hero-tagline {
+  font-size: 0.88rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: #d6d6d6;
+}
+
+.hero-sub {
+  margin: 18px 0 22px;
+  font-size: 1rem;
+  max-width: 640px;
+  color: #f2f2f2;
+}
+
+/* CTA */
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+/* Horaires */
+.hero-hours {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #dcdcdc;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 16px;
+}
+
+.hero-hours strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.hero-delivery {
+  margin-top: 6px;
+  font-weight: 500;
+  color: #f0f0f0;
+}
+
+/* -------------------------------------------
+   BOUTONS GLOBAUX
+------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 11px 20px;
+  border-radius: 999px;
+  font-size: 0.98rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease, border-color 0.16s ease;
+  white-space: nowrap;
+
+  position: relative;  /* pour le shimmer */
+  overflow: hidden;    /* le shimmer reste dans le bouton */
+}
+
+/* Shimmer sur tous les boutons */
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.55) 45%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: translateX(-120%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.btn:hover::after {
+  opacity: 1;
+  animation: btn-shimmer 0.6s ease-out;
+}
+
+@keyframes btn-shimmer {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #e74c3c, #e67e22);
+  border-color: rgba(255,255,255,0.12);
+  color: #ffffff;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.65);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.8);
+}
+
+.btn-call::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+
+  background-image: url("telephone.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 85% auto;
+
+  /* le fond noir disparaît, on ne garde que le blanc */
+  mix-blend-mode: screen;
+
+  opacity: 0.30;        /* tu peux laisser 0.30 ou remettre 0.35 */
+  pointer-events: none;
+}
+
+.btn-outline {
+  background: transparent;
+  border-color: rgba(255,255,255,0.28);
+  color: #f4f4f4;
+}
+
+.btn-outline:hover {
+  background: rgba(255,255,255,0.03);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  background: rgba(255,255,255,0.02);
+  border-color: rgba(255,255,255,0.14);
+  color: #ffffff;
+}
+
+.btn-ghost:hover {
+  background: rgba(255,255,255,0.06);
+  transform: translateY(-1px);
+}
+
+.btn:focus-visible {
+  outline: 2px solid #27ae60;
+  outline-offset: 3px;
+}
+
+/* Bouton interne aux cartes */
+.card-btn {
+  align-self: center;
+  margin-top: auto;
+}
+
+/* -------------------------------------------
+   MENUS (cartes restaurant / pizzas)
+------------------------------------------- */
+
 .menu-choices {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
-  margin: 30px auto 40px auto;
+  gap: 22px;
+  margin: 34px auto 34px;
 }
 
-/* À partir d’une certaine largeur, on passe en 2 colonnes */
-@media (min-width: 700px) {
+@media (min-width: 720px) {
   .menu-choices {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-/* Cartes de choix de menu */
 .menu-card {
-  background: rgba(255,255,255,0.25);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.35);
-  border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-  padding: 20px;
+  background: rgba(0, 0, 0, 0.52);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 20px 18px 18px;
   text-align: center;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.65);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Cards uniquement pour l’index */
-.menu-card-index {
-  background: rgba(40, 40, 40, 0.65) !important;
-  border: 1px solid rgba(255,255,255,0.15);
-  backdrop-filter: blur(12px);
+.card-full-link {
+  position: absolute;
+  inset: 0;         /* couvre toute la card */
+  z-index: 5;       /* passe devant */
 }
+
+/* --- CARTE PIZZA AVEC IMAGE EN FOND ET RETRAIT 1PX --- */
+
+.menu-card-pizza {
+  position: relative;
+  background: none; /* L’image sera dans ::after */
+}
+
+/* Image de fond (reculée de 1px pour ne pas toucher les bords) */
+.menu-card-pizza::after {
+  content: "";
+  position: absolute;
+  inset: 1px; /* 👈 retrait exact */
+  background-image: url("pizza.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: inherit; /* arrondi parfait */
+  z-index: 1;
+}
+
+/* Voile + blur pour garder le texte lisible */
+.menu-card-pizza::before {
+  content: "";
+  position: absolute;
+  inset: 1px; /* même retrait pour s’aligner parfaitement */
+  backdrop-filter: blur(2px);
+  background: rgba(0, 0, 0, 0.52);
+  border-radius: inherit;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Texte et contenu au-dessus */
+.menu-card-pizza > *:not(.card-full-link) {
+  position: relative;
+  z-index: 3;
+}
+
+/* --- CARTE RESTAURANT AVEC IMAGE EN FOND ET RETRAIT 1PX --- */
+
+.menu-card-restaurant {
+  position: relative;
+  background: none; /* L’image sera dans ::after */
+}
+
+/* Image de fond (reculée de 1px pour ne pas toucher les bords) */
+.menu-card-restaurant::after {
+  content: "";
+  position: absolute;
+  inset: 1px; /* 👈 retrait exact */
+  background-image: url("restaurant.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: inherit; /* arrondi parfait */
+  z-index: 1;
+}
+
+/* Voile + blur pour garder le texte lisible */
+.menu-card-restaurant::before {
+  content: "";
+  position: absolute;
+  inset: 1px; /* même retrait pour s’aligner parfaitement */
+  backdrop-filter: blur(2px);
+  background: rgba(0, 0, 0, 0.52);
+  border-radius: inherit;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Texte et contenu au-dessus */
+.menu-card-restaurant > *:not(.card-full-link) {
+  position: relative;
+  z-index: 3;
+}
+
+/* Lien invisible (clique toute la carte) – laissé intact */
+.card-full-link {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+}
+
 
 
 .menu-card h2 {
-  font-size: 1.4rem;
-  margin-bottom: 10px;
+  font-size: 1.3rem;
+  margin: 2px 0 8px;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  background: linear-gradient(90deg, #ffcc00, #ff0066, #00ccff);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  background-size: 200% auto;
-  animation: gradientMove 4s infinite linear;
+  letter-spacing: 0.16em;
+  color: #ffffff;
 }
 
 .menu-card p {
@@ -168,118 +523,103 @@ body {
   margin-bottom: 16px;
 }
 
-.card-btn {
-  align-self: center;
-  margin-top: auto;
+/* On garde cette classe pour cohérence globale */
+.menu-card-index {
+  /* Accent léger rouge/vert comme sur le flyer */
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.06),
+    0 14px 36px rgba(0,0,0,0.75);
 }
 
-h1 {
-  font-size: 2.3rem;
-  margin-bottom: 10px;
-  background: linear-gradient(90deg, #ffcc00, #ff0066, #00ccff);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  animation: gradientMove 3s infinite linear;
-  background-size: 200% auto;
+/* -------------------------------------------
+   LOCALISATION / MAP
+------------------------------------------- */
+
+.location-cta {
+  text-align: center;
+  margin-bottom: 18px;
 }
 
-p {
-  font-size: 1.1rem;
-  opacity: 0.9;
-  margin-bottom: 20px;
-}
-
-.btn {
-  display: inline-block;
-  padding: 12px 20px;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 700;
-  text-decoration: none;
-  color: #fff;
-  background: #00cc66;
-  transition: 0.2s ease;
-  margin-bottom: 20px;
-}
-.btn:hover {
-  background: #0a9c56;
-  transform: translateY(-1px);
-}
-.btn:focus-visible {
-  outline: 2px solid #ffcc00;
-  outline-offset: 2px;
+.address-line {
+  margin: 8px 0 0;
+  font-size: 0.92rem;
+  color: #e0e0e0;
 }
 
 .map-container {
   position: relative;
   width: 100%;
-  max-width: 500px;
-  margin: 0 auto 20px auto;
-  border-radius: 12px;
+  max-width: 560px;
+  margin: 0 auto 24px;
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  box-shadow:
+    0 18px 50px rgba(0,0,0,0.9),
+    0 0 0 1px rgba(255,255,255,0.08);
 }
+
 .map-container iframe {
   width: 100%;
-  height: 300px;
+  height: 320px;
   border: 0;
   display: block;
 }
 
+/* -------------------------------------------
+   FOOTER
+------------------------------------------- */
+
 footer {
-  margin-top: 20px;
-  font-size: 0.9rem;
-  opacity: 0.8;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #bdbdbd;
+  margin-top: 4px;
 }
+
+.footer-top {
+  margin: 0 0 4px;
+}
+
+.footer-links {
+  margin: 0;
+}
+
 footer a {
-  color: #ffcc00;
+  color: #ecf0f1;
   text-decoration: none;
-  transition: 0.2s ease;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
 }
+
 footer a:hover {
-  color: #00ccff;
-  text-shadow: 0 0 6px rgba(0,204,255,0.7);
+  color: #27ae60;
+  border-color: rgba(39,174,96,0.6);
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
-}
+/* -------------------------------------------
+   MENUS INTERNES (restaurant.html / pizzas.html)
+   -> on garde tes styles existants pour le reste
+------------------------------------------- */
 
-@media (prefers-reduced-motion: reduce) {
-  h1 { animation: none; }
-}
-
-/* --- MENU --- */
 .menu-section {
   margin: 60px auto;
   padding: 20px;
   max-width: 700px;
   text-align: left;
-  background: rgba(40, 40, 40, 0.65) !important;
-  border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  background: rgba(0,0,0,0.82);
+  border-radius: 22px;
+  box-shadow:
+    0 20px 50px rgba(0,0,0,0.8),
+    0 0 0 1px rgba(255,255,255,0.08);
 }
 
 .menu-section h2 {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   margin-bottom: 20px;
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  background: linear-gradient(90deg, #ffcc00, #ff0066, #00ccff);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  background-size: 200% auto;
-  animation: gradientMove 4s infinite linear;
+  letter-spacing: 0.2em;
+  color: #ffffff;
 }
 
 .menu-section ul {
@@ -289,36 +629,36 @@ footer a:hover {
 }
 
 .menu-section li {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   line-height: 1.6;
   margin: 16px 0;
   padding-bottom: 12px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
 }
 
 .menu-section li strong {
   display: inline-block;
   font-weight: 700;
-  color: #ffcc00;
+  color: #ffffff;
 }
 
 /* Ligne ingrédients FR */
 .menu-section li em.fr {
   display: block;
   font-size: 0.9rem;
-  opacity: 0.9;
+  opacity: 0.95;
   font-style: italic;
   line-height: 1.4;
-  color: #ffffff;
+  color: #f0f0f0;
 }
 
 /* Ligne ingrédients EN */
 .menu-section li em.en {
   display: block;
   font-size: 0.85rem;
-  opacity: 0.7;
+  opacity: 0.75;
   font-style: italic;
-  color: #d0d0d0;
+  color: #c8c8c8;
   margin-top: 2px;
 }
 
@@ -326,34 +666,73 @@ footer a:hover {
   border-bottom: none;
 }
 
+/* Tableau allergènes */
 .allergen-table {
   overflow-x: auto;
 }
+
 .allergen-table table {
   width: 100%;
   border-collapse: collapse;
   text-align: center;
   font-size: 0.9rem;
 }
-.allergen-table th, .allergen-table td {
-  border: 1px solid rgba(255,255,255,0.2);
+
+.allergen-table th,
+.allergen-table td {
+  border: 1px solid rgba(255,255,255,0.22);
   padding: 6px;
 }
+
 .allergen-table th {
-  background: rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.05);
   font-size: 0.8rem;
 }
-.allergen-table td:first-child, .allergen-table th:first-child {
+
+.allergen-table td:first-child,
+.allergen-table th:first-child {
   text-align: left;
   font-weight: 600;
 }
+
 .allergen-table td {
-  color: #fff;
+  color: #ffffff;
 }
+
 .allergen-table td:empty {
-  background: rgba(255,255,255,0.05);
+  background: rgba(255,255,255,0.04);
 }
-.allergen-table td:contains("✔") {
-  color: #ffcc00;
-  font-weight: bold;
+
+/* -------------------------------------------
+   DIVERS
+------------------------------------------- */
+
+.lang-switch {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.lang-switch a {
+  display: inline-block;
+  padding: 6px 12px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #f5f5f5;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.lang-switch a:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* Animations générales */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }

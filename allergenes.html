@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO PRINCIPAL -->
-  <title>Allergènes – Restaurant Le 716 au Muy | Informations clients</title>
+  <title>Allergènes Restaurant Le 716 au Muy | Informations clients</title>
 
   <meta name="description" content="Consultez la liste des allergènes présents dans les plats du Restaurant Le 716 au Muy. Informations pour les personnes allergiques ou intolérantes.">
 
   <!-- OPEN GRAPH -->
-  <meta property="og:title" content="Allergènes – Restaurant Le 716 au Muy">
+  <meta property="og:title" content="Allergènes Restaurant Le 716 au Muy">
   <meta property="og:description" content="Liste des allergènes et informations pour les clients du Restaurant Le 716 au Muy.">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="fr_FR">
@@ -24,7 +24,7 @@
   <!-- CANONICAL -->
   <link rel="canonical" href="https://leseptcentseize.github.io/le716/allergenes.html">
 
-  <!-- CSP -->
+  <!-- CSP light (souple mais pro) -->
   <meta http-equiv="Content-Security-Policy"
         content="default-src 'self' https:;
                  style-src 'self' 'unsafe-inline' https:;
@@ -35,36 +35,55 @@
                  base-uri 'self';
                  upgrade-insecure-requests">
 
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- AOS -->
+  <!-- AOS (Animate On Scroll) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       AOS.init({
-        duration: 800,
-        once: true
+        duration: 800,   // durée de l'anim
+        once: true       // ne joue qu'une fois
       });
     });
   </script>
 </head>
 
 <body>
-  <div class="container">
-    <h1 data-aos="fade-up">Restaurant • Bar<br>Le 716</h1>
-    <p data-aos="fade-up">Une expérience culinaire unique au Muy</p>
+<!-- Fond image + dégradé sombre -->
+<div class="hero-bg"></div>
 
-    <!-- BOUTON RETOUR ACCUEIL -->
-<div data-aos="fade-up" style="margin: 10px 0 30px 0;">
-  <a href="index.html" class="btn" style="background:#444; padding:8px 14px; font-size:0.9rem;">
-    ← Retour à l’accueil
-  </a>
-</div>
+<div class="page-wrap">
+  <main class="container">
+    <!-- Bloc héro premium -->
+    <header class="hero" data-aos="fade-up">
+      <div class="hero-main">
+        <div class="hero-logo-block">
+          <span class="hero-le">Le</span>
+          <span class="hero-716">716</span>
+          <span class="hero-tagline">RESTAURANT • BAR</span>
+        </div>
 
-    <!-- SECTION MENU -->
-    <main>
+        <p class="hero-sub">
+          Carte Restaurant – une expérience culinaire unique au Muy.
+        </p>
+
+        <div class="hero-cta">
+          <a href="tel:+33611947923"
+             class="btn btn-primary btn-call"
+             aria-label="Appeler le restaurant Le 716">
+            Réserver / Commander
+          </a>
+
+          <a href="index.html"
+             class="btn btn-ghost btn-back">
+            ← Retour à l’accueil
+          </a>
+        </div>
+      </div>
+    </header>
+
 
       <!-- ALLERGÈNES -->
       <section id="allergenes" class="menu-section" data-aos="fade-up">
@@ -175,39 +194,51 @@
           <em class="en">● contains &nbsp;–&nbsp; ○ may contain / depends on recipe, sauce or supplier.</em>
         </p>
       </section>
+
+      <!-- BOUTONS MAP / ADRESSE -->
+      <div class="location-cta" data-aos="fade-up">
+        <a class="btn btn-ghost"
+           href="https://maps.app.goo.gl/JC6rrwSnuoqnoLat5"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Ouvrir l’itinéraire vers Le 716 dans Google Maps">
+          📍 Voir sur Google Maps
+        </a>
+        <p class="address-line">
+          25 Allée Victor Hugo &bull; 83490 Le Muy
+        </p>
+      </div>
+
+      <!-- MAP -->
+      <div class="map-container" aria-label="Carte Google Maps intégrée" data-aos="fade-up">
+        <iframe
+          title="Carte Google Maps : Bar Restaurant Le 716"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5790.829205617517!2d6.565276313040976!3d43.47281727099083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ceaf8df92cc18d%3A0x8b398e9b0c891d89!2sBar%20Restaurant%20LE%20716!5e0!3m2!1sfr!2sfr!4v1756230283010!5m2!1sfr!2sfr"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+      </div>
     </main>
-
-    <!-- BOUTON + MAP EN BAS -->
-    <a class="btn"
-       href="https://maps.app.goo.gl/JC6rrwSnuoqnoLat5"
-       target="_blank" rel="noopener noreferrer"
-       aria-label="Ouvrir l’itinéraire vers Le 716 dans Google Maps"
-       data-aos="fade-up">
-      📍 Voir sur Google Maps
-    </a>
-
-    <div class="map-container" aria-label="Carte Google Maps intégrée" data-aos="fade-up">
-      <iframe
-        title="Carte Google Maps : Bar Restaurant Le 716"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5790.829205617517!2d6.565276313040976!3d43.47281727099083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ceaf8df92cc18d%3A0x8b398e9b0c891d89!2sBar%20Restaurant%20LE%20716!5e0!3m2!1sfr!2sfr!4v1756230283010!5m2!1sfr!2sfr"
-        loading="lazy"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen>
-      </iframe>
-    </div>
+    <footer>
+      <p class="footer-top">
+        Bar Restaurant Le 716 &bull; 25 Allée Victor Hugo, 83490 Le Muy
+      </p>
+      <p class="footer-links">
+        Réalisé par
+        <a href="https://www.instagram.com/clka.23/" target="_blank" rel="noopener noreferrer">@clka.23</a>
+        &nbsp;•&nbsp;
+        <a href="aboutus.html">À propos de nous</a>
+        &nbsp;•&nbsp;
+        <a href="mentions-legales.html">Mentions légales</a>
+      </p>
+    </footer>
   </div>
 
-  <footer>
-    Réalisé par
-    <a href="https://www.instagram.com/clka.23/" target="_blank" rel="noopener noreferrer">@clka.23</a>
-    •
-    <a href="aboutus.html">À propos de nous</a>
-    •
-    <a href="mentions-legales.html">Mentions légales</a>
-  </footer>
-
   <noscript>
-    <p style="opacity:.8">JavaScript est désactivé. La carte reste visible ; utilisez le bouton « Voir sur Google Maps » si besoin.</p>
+    <p style="opacity:.8; text-align:center; padding:1rem 0;">
+      JavaScript est désactivé. La carte reste visible ; utilisez le bouton « Voir sur Google Maps » si besoin.
+    </p>
   </noscript>
+
 </body>
 </html>
